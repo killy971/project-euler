@@ -11,11 +11,12 @@
 
 (defn split-half
   [l]
-  (let [size (count l)]
-    (let [first-half (take (quot size 2) l)]
+  (let [size (count l)
+        half-size (quot size 2)]
+    (let [first-half (take half-size l)]
       (if (zero? (rem size 2))
-        [first-half (drop (quot size 2) l)]
-        [first-half (drop (inc (quot size 2)) l)]))))
+        [first-half (drop half-size l)]
+        [first-half (drop (inc half-size) l)]))))
 
 (defn palindromic?  [x]
   (let [half (split-half (digits x))]
@@ -30,6 +31,6 @@
             (and (palindromic? n) (> n max)) (recur a (inc b) n)
             :default (recur a (inc b) max)))))
 
-(println (time (three-digit-product-biggest-palindrome)))
+(println (three-digit-product-biggest-palindrome))
 
 ; (println (reduce max (filter palindromic? (three-digit-number-product-seq))))
