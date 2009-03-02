@@ -30,6 +30,6 @@
             (and (palindromic? n) (> n max)) (recur a (inc b) n)
             :default (recur a (inc b) max)))))
 
-(println (time (three-digit-product-biggest-palindrome)))
+(println (three-digit-product-biggest-palindrome))
 
 ; (println (reduce max (filter palindromic? (three-digit-number-product-seq))))
