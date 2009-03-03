@@ -3,7 +3,6 @@
 
 (defn sum-even-fib
   [max]
-  (reduce + (filter #(= 1 (rem % 2))
-                    (take-while #(< % max) fib-seq))))
+  (reduce + (filter odd? (take-while #(< % max) fib-seq))))
 
 (println (sum-even-fib 4000000))

@@ -14,7 +14,7 @@
   (let [size (count l)
         half-size (quot size 2)]
     (let [first-half (take half-size l)]
-      (if (zero? (rem size 2))
+      (if (even? size)
         [first-half (drop half-size l)]
         [first-half (drop (inc half-size) l)]))))
 
