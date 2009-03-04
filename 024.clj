@@ -1,4 +1,8 @@
 (require 'clojure.contrib.combinatorics)
+
+(defn nth-permutation [n]
+  (nth (clojure.contrib.combinatorics/permutations (range 10)) (dec n)))
+
 (println
-  (nth (clojure.contrib.combinatorics/permutations (range 10)) 1000000))
+  (reduce str (nth-permutation 1000000)))
 
