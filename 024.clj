@@ -5,4 +5,3 @@
 
 (println
   (reduce str (nth-permutation 1000000)))
-
