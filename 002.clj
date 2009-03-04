@@ -1,5 +1,5 @@
 (def fib-seq
-  ((fn fib [a b] (lazy-seq (cons a (fib b (+ a b))))) 0 1))
+  ((fn fib [a b] (lazy-seq (cons a (fib b (+ a b))))) 1 1))
 
 (defn sum-even-fib
   [max]
