@@ -19,7 +19,7 @@
 # What is the value of the first triangle number to have over five hundred divisors?
 
 tn = i = 1
-over = ARGV[0].to_i
+over = 500
 
 result = loop do
 	tn += i += 1
