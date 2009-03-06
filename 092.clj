@@ -11,4 +11,4 @@
         next
         (recur next)))))
 
-(println (count (filter #(= % 89) (map ends-by (range 1 9999999)))))
+(println (count (filter #(= % 89) (map ends-by (range 1 10000000)))))
