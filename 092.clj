@@ -7,8 +7,9 @@
 (defn ends-by [n]
   (loop [i n]
     (let [next (reduce + (map #(* % %) (digits i)))]
-      (if (or (= next 1) (= next 89))
-        next
-        (recur next)))))
+      (cond
+        (= next 1) 0
+        (= next 89) 1
+        :default (recur next)))))
 
-(println (count (filter #(= % 89) (map ends-by (range 1 10000000)))))
+(println (reduce + (map ends-by (range 1 10000000))))
