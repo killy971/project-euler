@@ -10,11 +10,10 @@
     (if (= i 1) n (recur (* a n) (dec i)))))
 
 (defn biggest-power-digit-sum [max]
-  (loop [a 1, b 2, bpds 0]
+  (loop [a 2, b 2, bpds 0]
     (cond
       (= max a) bpds
-      (= max b) (let [nextA (inc a)]
-                  (recur nextA (inc nextA) bpds))
+      (= max b) (recur (inc a) 2 bpds)
       :default (recur a (inc b) (let [s (reduce + (digits (big-pow a b)))]
                                   (if (> s bpds) s bpds))))))
 
