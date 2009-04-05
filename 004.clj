@@ -3,14 +3,12 @@
 ; Find the largest palindrome made from the product of two 3-digit numbers.
 
 (defn digits
-  [x]
-  (loop [n x, dseq []]
+  [x] (loop [n x, dseq []]
     (if (< n 10)
       (cons n dseq)
       (recur (quot n 10) (cons (rem n 10) dseq)))))
 
-(defn split-half
-  [l]
+(defn split-half [l]
   (let [size (count l)
         half-size (quot size 2)]
     (let [first-half (take half-size l)]
