@@ -9,14 +9,16 @@
     :default (cons e l)))
 
 (defn unique-prime-factors [x]
-  (loop [f-seq (), p-seq primes-seq, n x]
+  (loop [f-seq (), p-seq primes-seq, n x, r (Math/sqrt x)]
     (let [p (first p-seq)
           d (zero? (rem n p))
           a (= p (first f-seq))]
     (cond
+      (> p r) (reverse (set-cons n f-seq))
       (= 1 n) (reverse f-seq)
-      (zero? (rem n p)) (recur (set-cons p f-seq) p-seq (quot n p))
-      :default (recur f-seq (rest p-seq) n)))))
+      (zero? (rem n p)) (let [next-n (quot n p)]
+                          (recur (set-cons p f-seq) p-seq next-n (Math/sqrt next-n)))
+      :default (recur f-seq (rest p-seq) n r)))))
 
 (defn phi [x]
   (reduce #(* %1 (/ (dec %2) %2)) x (unique-prime-factors x)))
