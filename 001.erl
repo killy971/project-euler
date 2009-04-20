@@ -1,4 +1,4 @@
-#!/opt/local/bin/escript
+#!/usr/bin/env escript
 % vim:set ts=4 sw=4:
 
 main(_) ->
