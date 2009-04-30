@@ -17,7 +17,7 @@ solution = 0
 
 solution = Prime.new.each do |p|
 	solution = p if p.is_pandigital
-	break p if p > 1_000_000_000
+	break p if p > 76_543_210
 end
 
 puts solution
