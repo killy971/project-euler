@@ -3,7 +3,7 @@
 
 main(_) ->
 	Filter = fun(X) -> ( eq_sum_digit_fact(X) ) end,
-	Sum = lists:sum(lists:filter(Filter, lists:seq(0, 99999))),
+	Sum = lists:sum(lists:filter(Filter, lists:seq(10, 99999))),
 	io:format("~w~n", [Sum]).
 
 fact(0) -> 1;
@@ -24,3 +24,4 @@ eq_sum_digit_fact(X, N, Sum) ->
 		true -> false;
 		false -> eq_sum_digit_fact(X, N div 10, Sum + fact(N rem 10))
 	end.
+
