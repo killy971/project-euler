@@ -1,7 +1,7 @@
 (defn root-exp-list [n]
-  (loop [i n, l [(+ 1 (/ 2))]]
+  (loop [i n, l [(inc (/ 2))]]
     (if (zero? i) (reverse l)
-      (recur (dec i) (cons (+ 1 (/ (+ 1 (first l)))) l)))))
+      (recur (dec i) (cons (inc (/ (inc (first l)))) l)))))
 
 (defn digit-count [x]
   (loop [n x, d-count 1]
