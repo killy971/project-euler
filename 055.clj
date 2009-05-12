@@ -1,12 +1,10 @@
-(defn digits
-  [x]
+(defn digits [x]
   (loop [n x, dseq []]
     (if (< n 10)
       (cons n dseq)
       (recur (quot n 10) (cons (rem n 10) dseq)))))
 
-(defn split-half
-  [l]
+(defn split-half [l]
   (let [size (count l)
         half-size (quot size 2)]
     (let [first-half (take half-size l)]
@@ -25,7 +23,7 @@
   (loop [n x, i 50]
     (let [next (+ n (rev-int n))]
       (cond
-        (= i 0) true
+        (zero? i) true
         (palindromic? next) false
         :default (recur next (dec i))))))
 
