@@ -5,7 +5,6 @@
 
 (defn side-for-ratio [threshold-ratio]
   (loop [start-val 1, side 3, prime-count 0, n 1]
-    ; (println side start-val prime-count n)
     (let [diag-seq (next-diag start-val side)
           primes (count (filter prime? diag-seq))
           next-prime-count (+ prime-count primes)
@@ -18,4 +17,4 @@
           next-prime-count
           next-n)))))
 
-(time (println (side-for-ratio 10)))
+((println (side-for-ratio 10))
