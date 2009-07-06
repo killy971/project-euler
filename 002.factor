@@ -1,6 +1,6 @@
 #! /usr/bin/env factor
 
-USING: kernel make math math.parser sequences io ;
+USING: kernel math math.parser sequences io ;
 IN: euler-002
 
 : next-fib ( seq -- seq )
