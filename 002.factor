@@ -14,6 +14,6 @@ IN: euler-002
     but-last-slice { 0 1 } prepend ;
 
 : solution ( -- n )
-    4000000 fib-upto [ even? ] filter 0 [ + ] reduce ;
+    4000000 fib-upto [ even? ] filter sum ;
 
 solution number>string print
