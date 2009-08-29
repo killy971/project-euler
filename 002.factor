@@ -5,7 +5,7 @@ IN: euler-002
 
 : next-fib ( seq -- seq )
     dup 2 tail*
-    dup peek swap first + suffix ;
+    dup last swap first + suffix ;
 
 : fib-upto ( n -- seq )
     0 1

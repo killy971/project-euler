@@ -16,6 +16,6 @@ IN: euler-004
 : solution ( -- n )
     1000 all-mul-seq
     [ pal? ] filter
-    natural-sort peek ;
+    natural-sort last ;
 
 solution number>string print
