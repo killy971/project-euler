@@ -1,12 +1,12 @@
 (load-file "sieve.clj")
 
-(defn for-p [primes, max-n, p-sum, array, pow-f, f2]
-  (loop [p (first primes), p-seq (rest primes), arr array]
+(defn for-p [primes, max-n, p-sum, array, pow-f, next-f]
+  (loop [p (first primes), p-seq (rest primes)]
     (let [sum (+ p-sum (pow-f p))]
       (cond
         (> sum max-n) array
-        (empty? p-seq) (f2 sum arr)
-        :default (recur (first p-seq) (rest p-seq) (f2 sum arr))))))
+        (empty? p-seq) (next-f sum array)
+        :default (do (next-f sum array) (recur (first p-seq) (rest p-seq)))))))
 
 (defn for-c [primes, max-n, p-sum, array]
   (for-p primes max-n p-sum array #(* % % % %)
