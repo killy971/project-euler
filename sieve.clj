@@ -3,7 +3,7 @@
 (defn sieve [n]
   (let [n (int n)]
   "Returns a list of all primes from 2 to n"
-    (let [root (int (Math/round (Math/floor (Math/sqrt n))))]
+    (let [root (int (inc (Math/floor (Math/sqrt n))))]
       (loop [i (int 3)
              a (int-array n)
              result (list 2)]
