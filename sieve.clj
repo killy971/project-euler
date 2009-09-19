@@ -6,9 +6,8 @@
     (let [root (int (inc (Math/floor (Math/sqrt n))))]
       (loop [i (int 3)
              a (int-array n)
-             result (list 2)]
-        (if (>= i n)
-          (reverse result)
+             result [2]]
+        (if (>= i n) result
           (recur (+ i (int 2))
                  (if (< i root)
                    (loop [arr a
@@ -23,4 +22,3 @@
                  (if (zero? (aget a i))
                    (conj result i)
                    result)))))))
-
