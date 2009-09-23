@@ -5,7 +5,7 @@
       (recur (quot n 10) (cons (rem n 10) digit-seq)))))
 
 (def e-seq
-  (drop 1 (map #(if (zero? (rem % 3)) (* 2 (/ % 3)) 1) (iterate inc 1))))
+  (map #(if (zero? (rem % 3)) (* 2 (/ % 3)) 1) (iterate inc 2)))
 
 (defn e-frac [n]
   (let [c-seq (reverse (take (dec n) e-seq))]
