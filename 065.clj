@@ -9,6 +9,6 @@
 
 (defn e-frac [n]
   (let [c-seq (reverse (take (dec n) e-seq))]
-    (+ 2 (reduce #(/ (+ %1 %2)) (/ (first c-seq)) (rest c-seq)))))
+    (+ 2 (reduce #(/ (+ %1 %2)) 0 c-seq))))
 
 (println (reduce + (to-d (.numerator (e-frac 100)))))
