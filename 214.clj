@@ -25,11 +25,10 @@
 
 (defn update-chain-length [p-seq, lengths, n]
   (if (= 2 n) lengths
-    (let [p (dec n)]
-      (loop [p (dec n), i 1]
-        (if (contains? lengths p)
-          (assoc lengths n (+ i (get lengths p)))
-          (recur (phi-m p-seq p) (inc i)))))))
+    (loop [p (dec n), i 1]
+      (if (contains? lengths p)
+        (assoc lengths n (+ i (get lengths p)))
+        (recur (phi-m p-seq p) (inc i))))))
 
 (defn make-chain-lengths [p-seq]
   (reduce #(update-chain-length p-seq %1 %2) (hash-map 1 1 2 2) p-seq))

@@ -9,10 +9,9 @@
       (recur (quot n 10) (+ (fact (rem n 10)) res)))))
 
 (defn chain-length [start]
-  (loop [n start, i 1, chain (set [])]
-    (let [next-n (digits-fact n)]
-      (if (contains? chain next-n)
-        i
-        (recur next-n (inc i) (conj chain next-n))))))
+  (loop [n start, chain (hash-set)]
+    (if (contains? chain n)
+      (count chain)
+      (recur (digits-fact n) (conj chain n)))))
 
 (println (count (filter #(= (chain-length %) 60) (range 1000000))))

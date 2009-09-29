@@ -1,3 +1,5 @@
+(set! *warn-on-reflection* true)
+
 (load-file "sieve.clj")
 
 (defn for-p [primes, max-n, p-sum, array, pow-f, next-f]
