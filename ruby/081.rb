@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 # vim:set ts=2 sw=2:
 
-m = File.open("081.txt").read.split.map{|l| l.split(",").map {|v| v.to_i}}
+m = File.open("../081.txt").read.split.map{|l| l.split(",").map {|v| v.to_i}}
 
 SIDE = m.first.size
 

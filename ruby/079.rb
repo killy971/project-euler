@@ -3,7 +3,7 @@
 
 pass = Array.new
 
-File.open("079.txt").read.each do |l|
+File.open("../079.txt").read.each do |l|
 
 end
 

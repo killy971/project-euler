@@ -12,7 +12,7 @@ result = loop do
 	card[key] += 1
 	base[key] = i unless base[key]
 	cand[key] = base[key] if card[key] == 5
-	cand[key].delete key if card[key] == 6
+	# cand[key].delete key if card[key] == 6
 	break cand.values.first ** 3 unless key.size == len || cand.empty?
 	len = key.size
 end

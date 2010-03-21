@@ -10,12 +10,13 @@ p[0] = 1
 	j = k = 1
 	while j > 0
 		j = i - (3 * k * k + k) / 2
-		s = s - (-1)** k * p[j] if j >= 0
+		s = s - (-1) ** k * p[j] if j >= 0
 		j = i - (3 * k * k - k) / 2
-		s = s - (-1)** k * p[j] if j >= 0
+		s = s - (-1) ** k * p[j] if j >= 0
 		k += 1
 	end
 	p[i] = s
+	puts s - 1
 end
 
 puts p[100] - 1

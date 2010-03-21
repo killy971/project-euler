@@ -3,7 +3,7 @@
 
 max = [0, 0]
 
-lines = File.open("099.txt").read.split
+lines = File.open("../099.txt").read.split
 
 lines.size.times do |i|
 	a, b = lines[i].split(",").map {|j| j.to_i}

@@ -39,7 +39,7 @@ private
 	end
 end
 
-n = File.open("042.txt").read.gsub(/"/, "").split(",").inject(0) do |s, w|
+n = File.open("../042.txt").read.gsub(/"/, "").split(",").inject(0) do |s, w|
 	s + (w.is_triangle? ? 1 : 0)
 end
 
