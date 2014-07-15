@@ -9,7 +9,7 @@ diff = 100
 closest = 0
 
 2000.times do |a|
-	2000.times do |b|
+	a.upto(2000) do |b|
 		n = f(a, b)
 		d = (8_000_000 - n).abs
 		if d < diff
