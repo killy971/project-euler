@@ -1,4 +1,4 @@
-My Factor solutions to Project Euler
+My solutions to Project Euler
 =====================
 
 Solutions implemented in other languages are available in the following repositories:
@@ -6,4 +6,4 @@ Solutions implemented in other languages are available in the following reposito
 - [Clojure solutions](http://github.com/guillaume-nargeot/project-euler-clojure "Clojure solutions")
 - [Factor solutions](http://github.com/guillaume-nargeot/project-euler-clojure "Factor solutions")
 
-<img src="http://projecteuler.net/profile/killy971.png"/>
+<img src="https://projecteuler.net/profile/killy971.png"/>
